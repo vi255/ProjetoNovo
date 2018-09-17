@@ -1,0 +1,21 @@
+﻿using ProjetoNovo.Entities.DocumentoEntity;
+using ProjetoNovo.Entities.PedidoEntity;
+using ProjetoNovo.Entities.TelefoneEntity;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProjetoNovo.Services.ClienteServices.DTOs
+{
+    public class CreateClienteInput
+    {
+        public string Name { get; set; }
+        [DefaultValue("Ativo")]
+        public string Status { get; set; }
+        public Documento Documento { get; set; }
+        public List<Telefone> Telefones { get; }
+    }
+}
