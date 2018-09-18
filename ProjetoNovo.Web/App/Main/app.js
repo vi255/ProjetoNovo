@@ -30,6 +30,16 @@
                     url: '/about',
                     templateUrl: '/App/Main/views/about/about.cshtml',
                     menu: 'About' //Matches to name of 'About' menu in ProjetoNovoNavigationProvider
+                })
+                .state('cliente', {
+                    url: '/cliente',
+                    templateUrl: '/App/Main/views/cliente/cliente_index.cshtml',
+                    menu: 'Cliente' //Acessa o menu Cliente
+                })
+                .state('pedido', {
+                    url: '/pedido',
+                    templateUrl: '/App/Main/views/pedido/pedido_index.cshtml',
+                    menu: 'Pedido' //Acessa o menu Pedido
                 });
         }
     ]);

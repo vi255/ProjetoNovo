@@ -1,0 +1,40 @@
+﻿<form id="frm_edit_pedido" name="pedidoEditForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("Create or Edit Pedido")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="nomeProduto" class="form-label">@L("Nome do Produto")</label>
+                    <div class="form-line">
+                        <input id="nomeProduto" type="text" name="NomeProduto" ng-model="vm.pedido.nomeProduto" required maxlength="32" minlength="2" class="validate form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="prazoEntrega" class="form-label">@L("Prazo de Entrega")</label>
+                    <div class="form-line">
+                        <input id="prazoEntrega" type="text" name="PrazoEntrega" ng-model="vm.pedido.prazoEntrega" required maxlength="50" minlength="2" class="validate form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="clienteEditForm.$invalid">
+            @L("Save")
+        </button>
+    </div>
+</form>

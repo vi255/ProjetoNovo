@@ -37,9 +37,9 @@ namespace ProjetoNovo.Web
                         )
                   ).AddItem(
                     new MenuItemDefinition(
-                        "Produto",
-                        new LocalizableString("Produto", ProjetoNovoConsts.LocalizationSourceName),
-                        url: "#/produto",
+                        "Pedido",
+                        new LocalizableString("Pedido", ProjetoNovoConsts.LocalizationSourceName),
+                        url: "#/pedido",
                         icon: "fa fa-info"
                         )
 

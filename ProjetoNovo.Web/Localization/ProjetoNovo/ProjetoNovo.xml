@@ -13,7 +13,22 @@
     <text name="About_AspNetBoilerplateDescription" value="ASP.NET Boilerplate is a starting point for new web applications with best practices and most popular tools! ASP.NET Boilerplate provides an infrastructure for &lt;strong&gt;NLayer architecture&lt;/strong&gt; and &lt;strong&gt;Domain Driven Design&lt;/strong&gt;." />
     <text name="ForMoreInformation" value="For more information" />
     <text name="Cliente" value="Cliente" />
-    <text name="Produto" value="Produto" />
-  
+    <text name="Pedido" value="Pedido" />
+    <text name="Nome" value="Nome" />
+    <text name="Status" value="Status" />
+    <text name="Documento" value="Documento" />
+    <text name="Telefone" value="Telefone" />
+    <text name="Create New Cliente" value="Create New Cliente" />
+    <text name="Create or Edit Cliente" value="Create or Edit Cliente"/>
+    <text name="Nome do Produto" value="Nome do Produto" />
+    <text name="Prazo de Entrega" value="Prazo de Entrega" />
+    <text name="Create New Pedido" value="Create New Pedido" />
+    <text name="Create Or Edit Pedido" value="Create Or Edit Pedido" />
+    <text name="Save" value="Save" />
+    <text name="Cancel" value="Cancel" />
+    <text name="Edit" value="Edit" />
+    <text name="Delete" value="Delete" />
+    <text name="Tipo de Documento" value="Tipo de Documento" />
+    <text name="Telefones" value="Telefones" />
   </texts>
 </localizationDictionary>

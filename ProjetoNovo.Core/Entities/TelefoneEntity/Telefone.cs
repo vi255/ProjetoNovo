@@ -2,6 +2,7 @@
 using ProjetoNovo.Entities.ClienteEntity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,10 @@ namespace ProjetoNovo.Entities.TelefoneEntity
 {
     public class Telefone : FullAuditedEntity<long>
     {
+        
         public int NumeroTelefone { get; set; }
         public string TipoTelefone { get; set; }
-        public int ClienteId { get; set; }
+        public long ClienteId { get; set; }
         public Cliente Cliente;
 
         //Construtores

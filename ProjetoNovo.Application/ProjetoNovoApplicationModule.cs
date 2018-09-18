@@ -19,8 +19,8 @@ namespace ProjetoNovo
         {
             Configuration.Modules.AbpAutoMapper().Configurators.Add(config =>
             {
-            config.CreateMap<CreateClienteInput, Cliente>()
-            .ConstructUsing(x => new Cliente(x.Name, x.Status, x.Documento, x.Telefones));
+                config.CreateMap<CreateClienteInput, Cliente>()
+                .ConstructUsing(x => new Cliente(x.Name, x.Status, x.Documento, x.Telefones));
 
                 config.CreateMap<UpdateClienteInput, Cliente>()
                 .ConstructUsing(x => new Cliente(x.Name, x.Status, x.Documento, x.Telefones));

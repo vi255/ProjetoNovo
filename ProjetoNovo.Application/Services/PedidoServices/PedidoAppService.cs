@@ -44,6 +44,11 @@ namespace ProjetoNovo.Services.PedidoServices
             return new GetAllPedidoOutput { Pedido = Mapper.Map<List<GetAllPedidoId>>(pedido) };
         }
 
+        public async Task<GetPedidoByIdOutput> GetById(long id)
+        {
+            var pedido = await _pedidoManager.GetById(id);
+            return pedido.MapTo<GetPedidoByIdOutput>();
+        }
 
         public async Task<UpdatePedidoOutput> UpdatePedido(UpdatePedidoInput input)
         {

@@ -8,11 +8,12 @@ using Abp.Application.Services;
 
 namespace ProjetoNovo.Services.PedidoServices
 {
-    public interface IPedidoAppService
+    public interface IPedidoAppService : IApplicationService
     {
         Task<CreatePedidoOutput> CreatePedido(CreatePedidoInput input);
         Task<UpdatePedidoOutput> UpdatePedido(UpdatePedidoInput input);
         Task DeletePedido(long id);
+        Task<GetPedidoByIdOutput> GetById(long id);
         Task<GetAllPedidoOutput> GetAllPedido();
     }
 }

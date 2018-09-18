@@ -196,6 +196,7 @@
     <Compile Include="Services\ClienteServices\DTOs\CreateClienteOutput.cs" />
     <Compile Include="Services\ClienteServices\DTOs\GetAllClienteItem.cs" />
     <Compile Include="Services\ClienteServices\DTOs\GetAllClienteOutput.cs" />
+    <Compile Include="Services\ClienteServices\DTOs\GetClienteByIdOutput.cs" />
     <Compile Include="Services\ClienteServices\DTOs\UpdateClienteInput.cs" />
     <Compile Include="Services\ClienteServices\DTOs\UpdateClienteOutput.cs" />
     <Compile Include="Services\ClienteServices\IClienteAppService.cs" />
@@ -211,6 +212,7 @@
     <Compile Include="Services\PedidoServices\DTOsPedido\CreatePedidoOutput.cs" />
     <Compile Include="Services\PedidoServices\DTOsPedido\GetAllPedidoId.cs" />
     <Compile Include="Services\PedidoServices\DTOsPedido\GetAllPedidoOutput.cs" />
+    <Compile Include="Services\PedidoServices\DTOsPedido\GetPedidoByIdOutput.cs" />
     <Compile Include="Services\PedidoServices\DTOsPedido\UpdatePedidoInput.cs" />
     <Compile Include="Services\PedidoServices\DTOsPedido\UpdatePedidoOutput.cs" />
     <Compile Include="Services\PedidoServices\IPedidoAppService.cs" />

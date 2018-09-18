@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace ProjetoNovo.Services.PedidoServices.DTOsPedido
 {
-    public class GetAllPedidoId : EntityDto<long>
+    public class GetPedidoByIdOutput : EntityDto<long>
     {
         public string NomeProduto { get; set; }
 
         public int PrazoEntrega { get; set; }
-
     }
 }

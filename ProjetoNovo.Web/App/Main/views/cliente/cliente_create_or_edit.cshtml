@@ -1,0 +1,91 @@
+﻿<form id="frm_edit_cliente" name="clienteEditForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("Create or Edit Cliente")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="clientename" class="form-label">@L("Nome")</label>
+                    <div class="form-line">
+                        <input id="clientename" type="text" name="ClienteName" ng-model="vm.cliente.name" required maxlength="32" minlength="2" class="validate form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="value" class="form-label">Status</label>
+                    <div class="form-line">
+                        <input type="radio" name="nome_do_grupo" ng-model="vm.cliente.status" value="ativo" /> Ativo
+                        <input type="radio" name="nome_do_grupo" ng-model="vm.cliente.status" value="inativo" /> Inativo
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="documento" class="form-label">@L("Tipo de Documento")</label>
+                    <div class="form-line">
+                        <select ng-model="vm.cliente.documento.tipoDocumento">
+                            <option value="">Selecione um Tipo de Documento</option>
+                            <option value="RG">RG</option>
+                            <option value="CPF">CPF</option>
+                            <option value="Passaporte">Passaporte</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="value" class="form-label">Nº Documento</label>
+                    <div class="form-line">
+                        <input id="NumeroDocumento" type="text" name="numeroDocumento" ng-model="vm.cliente.documento.numeroDocumento" class="form-control">
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="name" class="form-label">Tel. Celular</label>
+                    <div class="form-line">
+                        <input id="telefone1" type="number" name="telefone1" ng-model="vm.cliente.telefones[0].numeroTelefone" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="value" class="form-label">Tel. Residencial</label>
+                    <div class="form-line">
+                        <input id="telefone2" type="number" name="telefone2" ng-model="vm.cliente.telefones[1].numeroTelefone" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="value" class="form-label">Tel. Opcional</label>
+                    <div class="form-line">
+                        <input id="telefone3" type="number" name="telefone3" ng-model="vm.cliente.telefones[2].numeroTelefone" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <br />
+
+        </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+                        @L("Cancel")
+                    </button>
+                    <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="clienteEditForm.$invalid">
+                        @L("Save")
+                    </button>
+                </div>
+</form>

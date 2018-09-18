@@ -1,5 +1,6 @@
 ﻿using Abp.Domain.Repositories;
 using Abp.Domain.Services;
+using ProjetoNovo.Entities.DocumentoEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,12 +30,13 @@ namespace ProjetoNovo.Entities.ClienteEntity.Manager
 
         public async Task<List<Cliente>> GetAllList()
         {
-            return await _clienteRepository.GetAllListAsync();
+            return await Task.Run(() => _clienteRepository.GetAllIncluding(x => x.Documento, y => y.Telefones).ToList());
         }
 
         public async Task<Cliente> GetById(long id)
         {
-            return await _clienteRepository.GetAsync(id);
+            return await Task.Run(() => _clienteRepository.GetAllIncluding(x => x.Documento, y => y.Telefones).Where(x=> x.Id == id).FirstOrDefault());
+
         }
 
         public async Task<Cliente> Update(Cliente cliente)

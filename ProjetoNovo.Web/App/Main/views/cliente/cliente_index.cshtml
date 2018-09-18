@@ -1,0 +1,103 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="row clearfix" ng-controller="app.views.cliente.cliente_index as vm">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card main-content">
+                <div class="header">
+                    <h2>
+                        @L("Cliente")
+                    </h2>
+                    <div class="body table-responsive">
+                        <!-- ******************************************************** -->
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>@L("Nome")</th>
+                                    <th>@L("Status")</th>
+                                    <th>@L("Documento")</th>
+                                    <th>@L("Telefone")</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="clien in vm.cliente">
+                                    <td class="td--1">{{clien.name}}</td>
+                                    <td class="td--2">{{clien.status}}</td>
+                                    <td class="td--3">{{clien.documento.tipoDocumento}} : {{clien.documento.numeroDocumento}}</td>
+                                    <td class="td--4"><div ng-repeat="telefone in clien.telefones">{{telefone.tipoTelefone}} : {{telefone.numeroTelefone}}</div></td>
+                                    <td class="td--5">
+                                        <div class="pull-right">
+                                            <button class="btn bg-primary text-white overdue"
+                                                    ng-click="vm.editCliente(clien)">
+                                                <span class="fa fa-edit text-white">&nbsp;</span>@L("Edit")
+                                            </button>
+                                            <button class="btn bg-secondary text-white overdue"
+                                                    ng-click="vm.delete(clien)">
+                                                <span class="fa fa-trash text-white">&nbsp;</span>@L("Delete")
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- ******************************************************** -->
+                        <div class="col-lg-12">
+                            <div class="pull-right">
+                                <button class="btn bg-primary text-white overdue"
+                                        ng-click="vm.createCliente()">
+                                    <span class="fa fa-plus text-white">&nbsp;</span>@L("Create New Cliente")
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    .table-truncate {
+        position: relative;
+    }
+
+    .table-truncate__body {
+        position: absolute;
+        max-width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .td--1 {
+        width: 0%;
+    }
+
+    .td--2 {
+        width: 0%;
+    }
+
+    .td--3 {
+        width: 0%;
+        vertical-align: top;
+    }
+
+    .td--4 {
+        width: 0%;
+        vertical-align: top;
+    }
+
+    .td--5 {
+        width: 0%;
+        vertical-align: top;
+    }
+</style>

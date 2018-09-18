@@ -197,6 +197,14 @@
     <Compile Include="Migrations\201809141721521_ProjetoNovo.Designer.cs">
       <DependentUpon>201809141721521_ProjetoNovo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809181200389_Atualizacao.cs" />
+    <Compile Include="Migrations\201809181200389_Atualizacao.Designer.cs">
+      <DependentUpon>201809181200389_Atualizacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809181219589_novocampo.cs" />
+    <Compile Include="Migrations\201809181219589_novocampo.Designer.cs">
+      <DependentUpon>201809181219589_novocampo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProjetoNovoDataModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -214,6 +222,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809141721521_ProjetoNovo.resx">
       <DependentUpon>201809141721521_ProjetoNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809181200389_Atualizacao.resx">
+      <DependentUpon>201809181200389_Atualizacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809181219589_novocampo.resx">
+      <DependentUpon>201809181219589_novocampo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
