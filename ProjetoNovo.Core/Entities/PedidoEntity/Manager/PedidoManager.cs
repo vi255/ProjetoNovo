@@ -32,7 +32,7 @@ namespace ProjetoNovo.Entities.PedidoEntity.Manager
             return await _pedidoRepository.GetAllListAsync();
         }
 
-        public async Task<Pedido> GetById(long id)
+        public async Task<Pedido> GetByIdPedido(long id)
         {
             return await _pedidoRepository.GetAsync(id);
         }

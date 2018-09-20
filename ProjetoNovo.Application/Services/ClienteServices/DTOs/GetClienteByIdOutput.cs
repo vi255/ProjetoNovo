@@ -15,6 +15,7 @@ namespace ProjetoNovo.Services.ClienteServices.DTOs
         public string Name { get; set; }
         [DefaultValue("Ativo")]
         public string Status { get; set; }
+        public long DocumentoId { get; set; }
         public Documento Documento { get; set; }
         public List<Telefone> Telefones { get; set; }
     }

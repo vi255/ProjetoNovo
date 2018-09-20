@@ -13,7 +13,7 @@ namespace ProjetoNovo.Services.PedidoServices
         Task<CreatePedidoOutput> CreatePedido(CreatePedidoInput input);
         Task<UpdatePedidoOutput> UpdatePedido(UpdatePedidoInput input);
         Task DeletePedido(long id);
-        Task<GetPedidoByIdOutput> GetById(long id);
+        Task<GetPedidoByIdOutput> GetByIdPedido(long id);
         Task<GetAllPedidoOutput> GetAllPedido();
     }
 }

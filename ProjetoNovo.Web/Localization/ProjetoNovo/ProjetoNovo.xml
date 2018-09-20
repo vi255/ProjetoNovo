@@ -30,5 +30,7 @@
     <text name="Delete" value="Delete" />
     <text name="Tipo de Documento" value="Tipo de Documento" />
     <text name="Telefones" value="Telefones" />
+    <text name="Cliente/Pedido" value="Cliente/Pedido" />
+    <text name="Salvar" value="Salvar" />
   </texts>
 </localizationDictionary>

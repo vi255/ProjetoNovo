@@ -183,10 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\ClienteEntity\Cliente.cs" />
-    <Compile Include="Entities\ClienteEntity\ManagerClientePedido\ClientePedidoManager.cs" />
-    <Compile Include="Entities\ClienteEntity\ManagerClientePedido\IClientePedidoManager.cs" />
     <Compile Include="Entities\ClienteEntity\Manager\ClienteManager.cs" />
     <Compile Include="Entities\ClienteEntity\Manager\IClienteManager.cs" />
+    <Compile Include="Entities\ClienteEntity\Manager\IClienteRepository.cs" />
     <Compile Include="Entities\DocumentoEntity\Documento.cs" />
     <Compile Include="Entities\DocumentoEntity\Manager\DocumentoManager.cs" />
     <Compile Include="Entities\DocumentoEntity\Manager\IDocumentoManager.cs" />

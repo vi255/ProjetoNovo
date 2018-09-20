@@ -43,6 +43,14 @@ namespace ProjetoNovo.Web
                         icon: "fa fa-info"
                         )
 
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Cliente/Pedido",
+                        new LocalizableString("Cliente/Pedido", ProjetoNovoConsts.LocalizationSourceName),
+                        url: "#/clientepedido",
+                        icon: "fa fa-info"
+                        )
+
                 );
         }
     }

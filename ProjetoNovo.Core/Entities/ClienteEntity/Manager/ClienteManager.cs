@@ -1,6 +1,7 @@
 ﻿using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using ProjetoNovo.Entities.DocumentoEntity;
+using ProjetoNovo.Entities.PedidoEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace ProjetoNovo.Entities.ClienteEntity.Manager
 {
     public class ClienteManager : IDomainService, IClienteManager
     {
-        private IRepository<Cliente, long> _clienteRepository;
+        private IClienteRepository _clienteRepository;
 
-        public ClienteManager(IRepository<Cliente, long> clienteRepository)
+        public ClienteManager(IClienteRepository clienteRepository)
         {
             _clienteRepository = clienteRepository;
         }
@@ -33,15 +34,21 @@ namespace ProjetoNovo.Entities.ClienteEntity.Manager
             return await Task.Run(() => _clienteRepository.GetAllIncluding(x => x.Documento, y => y.Telefones).ToList());
         }
 
-        public async Task<Cliente> GetById(long id)
+        public async Task<Cliente> GetByIdCliente(long id)
         {
-            return await Task.Run(() => _clienteRepository.GetAllIncluding(x => x.Documento, y => y.Telefones).Where(x=> x.Id == id).FirstOrDefault());
+            return await Task.Run(() => _clienteRepository.GetAllIncluding(x => x.Documento, y => y.Telefones, z => z.Pedidos).Where(x=> x.Id == id).FirstOrDefault());
 
         }
 
         public async Task<Cliente> Update(Cliente cliente)
         {
             return await _clienteRepository.UpdateAsync(cliente);
+        }
+
+        public async Task VincularPedido(Cliente cliente, Pedido pedido)
+        {
+            await _clienteRepository.Add(cliente, pedido);
+
         }
     }
 }

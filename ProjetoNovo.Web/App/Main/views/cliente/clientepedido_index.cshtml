@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div class="row clearfix" ng-controller="app.views.cliente.clientepedido_index as vm">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <div class="row">
+                        <h4>Cliente</h4>
+                        <select ng-model="vm.clienteId">
+                            <option ng-repeat="cliente in vm.clientes" value="{{cliente.id}}">{{cliente.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <h4>Pedido</h4>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <div class="row">
+                        
+                        <select ng-model="vm.pedidoId">
+                            <option ng-repeat="pedido in vm.pedidos" value="{{pedido.id}}">{{pedido.nomeProduto}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="modal-footer">
+                <div class="row">
+                    <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save(vm.clienteId,vm.pedidoId)">
+                        @L("Save")
+                    </button>
+                </div>
+            </div>
+        </div>
+     </div>
+</body>
+</html>

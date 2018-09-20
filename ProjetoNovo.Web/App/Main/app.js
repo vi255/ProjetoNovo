@@ -40,6 +40,11 @@
                     url: '/pedido',
                     templateUrl: '/App/Main/views/pedido/pedido_index.cshtml',
                     menu: 'Pedido' //Acessa o menu Pedido
+                })
+                .state('clientepedido', {
+                    url: '/clientepedido',
+                    templateUrl: '/App/Main/views/cliente/clientepedido_index.cshtml',
+                    menu: 'Cliente/Pedido' //Acessa o menu clientePedido
                 });
         }
     ]);

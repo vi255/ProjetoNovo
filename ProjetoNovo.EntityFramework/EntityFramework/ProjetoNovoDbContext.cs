@@ -1,13 +1,17 @@
 ﻿using System.Data.Common;
 using System.Data.Entity;
+using Abp.Domain.Repositories;
 using Abp.EntityFramework;
 using ProjetoNovo.Entities.ClienteEntity;
 using ProjetoNovo.Entities.DocumentoEntity;
 using ProjetoNovo.Entities.PedidoEntity;
 using ProjetoNovo.Entities.TelefoneEntity;
+using ProjetoNovo.EntityFramework.Repositories;
+
 
 namespace ProjetoNovo.EntityFramework
 {
+
     public class ProjetoNovoDbContext : AbpDbContext
     {
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -31,6 +35,8 @@ namespace ProjetoNovo.EntityFramework
         public virtual IDbSet<Pedido> Pedidos { get; set; }
 
         public virtual IDbSet<Telefone> Telefones { get; set; }
+
+
         //TODO: Define an IDbSet for each Entity...
 
         //Example:

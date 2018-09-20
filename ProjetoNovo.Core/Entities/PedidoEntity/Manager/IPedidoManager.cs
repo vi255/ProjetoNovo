@@ -11,7 +11,7 @@ namespace ProjetoNovo.Entities.PedidoEntity.Manager
         Task<long> Create(Pedido pedido);
         Task<Pedido> Update(Pedido pedido);
         Task Delete(long id);
-        Task<Pedido> GetById(long id);
+        Task<Pedido> GetByIdPedido(long id);
         Task<List<Pedido>> GetAllList();
     }
 }

@@ -4,6 +4,7 @@ using AutoMapper;
 using ProjetoNovo.Entities.ClienteEntity;
 using ProjetoNovo.Entities.ClienteEntity.Manager;
 using ProjetoNovo.Entities.DocumentoEntity;
+using ProjetoNovo.Entities.PedidoEntity.Manager;
 using ProjetoNovo.Entities.TelefoneEntity;
 using ProjetoNovo.Services.ClienteServices.DTOs;
 using System;
@@ -17,10 +18,12 @@ namespace ProjetoNovo.Services.ClienteServices
     public class ClienteAppService : ApplicationService, IClienteAppService
     {
         private IClienteManager _clienteManager;
+        private IPedidoManager pedidoManager;
 
-        public ClienteAppService(IClienteManager clienteManager)
+        public ClienteAppService(IClienteManager clienteManager, IPedidoManager _pedidoManager)
         {
             _clienteManager = clienteManager;
+            pedidoManager = _pedidoManager;
         }
 
         public async Task<CreateClienteOutput> CreateCliente(CreateClienteInput input)
@@ -41,13 +44,13 @@ namespace ProjetoNovo.Services.ClienteServices
         public async Task<GetAllClienteOutput> GetAllCliente()
         {
             var cliente = await _clienteManager.GetAllList();
-            return new GetAllClienteOutput { Cliente = Mapper.Map<List<GetAllClienteItem>>(cliente)};
+            return new GetAllClienteOutput { Cliente = Mapper.Map<List<GetAllClienteItem>>(cliente) };
 
         }
 
-        public async Task<GetClienteByIdOutput> GetById(long id)
+        public async Task<GetClienteByIdOutput> GetByIdCliente(long id)
         {
-            var cliente = await _clienteManager.GetById(id);
+            var cliente = await _clienteManager.GetByIdCliente(id);
             return cliente.MapTo<GetClienteByIdOutput>();
 
         }
@@ -60,6 +63,13 @@ namespace ProjetoNovo.Services.ClienteServices
             return clienteAtualizado.MapTo<UpdateClienteOutput>();
         }
 
+        public async Task VincularPedido(long clienteId, long pedidoId)
+        {
+            var cliente = await _clienteManager.GetByIdCliente(clienteId);
+            var pedido = await pedidoManager.GetByIdPedido(pedidoId);
+
+            await _clienteManager.VincularPedido(cliente, pedido);
+        }
 
     }
 }
